@@ -1,0 +1,51 @@
+<!--pages/news/news.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<block class="text">
+
+<view class="artice-tit">
+  <view class="artice-title">{{title}}</view>
+  <view class="artice-brow">浏览次数：{{browse}}</view>
+</view>
+  <view wx:if="{{ind==1}}" class="article-content2">
+    <video id="myVideo" src="{{msg}}" danmu-list="{{danmuList}}" enable-danmu controls enable-progress-gesture></video>
+  </view>
+
+  <view wx:elif="{{ind==2}}" class="article-content1">
+    <audio poster="{{img}}" name="{{title}}" author="金自力" src="{{msg}}" id="myAudio" controls loop></audio>
+  </view>
+
+  <view wx:else class="article-content">
+    <template is="wxParse" data="{{wxParseData:msg.nodes}}"/>
+    <view wx:if="{{froms !=''}}"class="yuan">来源:{{froms}}</view>
+  </view>
+
+</block>
+<block class="ping">
+  <view class="slide">评论({{pinglun}})：</view>
+  <view wx:if="{{commtent==1}}">
+    <text class="slideText">暂无评论</text>
+  </view>
+  <view wx:else>
+    <view wx:for="{{commtent}}">
+      <view class="listWrap">
+        <image src="{{item.image}}" class="listThumb"/>
+        <view class="listInfo">
+          <view class="listtop">
+            <text class="listname">{{item.name}}:</text>
+            <text class="listKeyAdd">{{item.addtime}}</text>
+          </view>
+          <view class="listTitle">{{item.text}}</view>
+        </view>
+      </view>
+    </view>
+</view>
+</block>
+<form bindsubmit="bindFormSubmit">
+<view class="section">
+  <textarea placeholder="写点什么吧" name='textarea' />
+</view>
+<button form-type='submit' open-type='getUserInfo' bindgetuserinfo="onGotUserInfo"> 评论 </button>
+</form>
+
+
+

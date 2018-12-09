@@ -1,0 +1,47 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/news/news",
+    "pages/works/works",
+    "pages/life/life",
+    "pages/article/article",
+      "pages/articleb/articleb"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "梅城生活网",
+    "navigationBarTextStyle":"#fff",
+    "enablePullDownRefresh":true,
+    "backgroundTextStyle":"dark"
+  },
+  "tabBar":{
+    "color":"#8a8a8a",
+    "selectedColor":"#d81e06",
+    "list":[{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath":"img/indexD.png",
+      "selectedIconPath":"img/indexS.png"
+    },{
+      "pagePath": "pages/news/news",
+      "text": "梅城生活",
+      "iconPath": "img/newsD.png",
+      "selectedIconPath": "img/newsS.png"
+    },{
+      "pagePath": "pages/works/works",
+      "text": "金自力作品",
+      "iconPath":"img/singerD.png",
+      "selectedIconPath":"img/singerS.png"
+    },{
+      "pagePath": "pages/life/life",
+      "text": "日常生活",
+      "iconPath": "img/lifeD.png",
+      "selectedIconPath": "img/lifeS.png"
+    }
+    ]
+  }
+
+
+}

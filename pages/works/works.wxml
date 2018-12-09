@@ -1,0 +1,19 @@
+<!--pages/performance/performance.wxml-->
+<!--pages/singer/singer.wxml-->
+<!--index.wxml-->
+
+<block wx:for="{{newslist}}" wx:key="this">
+<navigator class="listWrap" url="/pages/articleb/articleb?id={{item.id}}">
+  <image class="listThumb" src="{{item.thumb}}" />
+  <view class="listInfo">
+    <view class="listTitle">{{item.title}}</view>
+    <view class="listKeyAdd">{{item.addtime}}</view>
+  </view>
+</navigator>
+</block>
+<view wx:if = "{{err== 1}}" class="slide info">更多作品敬请期待</view>
+
+
+
+
+

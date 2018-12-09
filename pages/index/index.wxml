@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+  <block wx:for="{{focus}}" wx:key="this">
+    <swiper-item>
+      <navigator url="/pages/article/article?id={{item.id}}">
+        <image src="{{item.thumb}}" />
+      </navigator>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="slide">最新更新</view>
+
+<block wx:for="{{newslist}}" wx:key="this">
+<navigator url="/pages/article/article?id={{item.id}}" class="listWrap">
+  <image src="{{item.thumb}}" class="listThumb" />
+  <view class="listInfo">
+    <view class="listTitle">{{item.title}}</view>
+    <view class="listKeyAdd">{{item.addtime}}</view>
+  </view>
+</navigator>
+</block>
+<view wx:if="{{err==1}}" class="slide info">--更多作品敬请期待--</view>
+
